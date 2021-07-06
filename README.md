@@ -124,7 +124,6 @@ Task definition in order of priority
 
 ## Additional Links
 
-
 ### Trello
 [Link url](https://trello.com)
 
