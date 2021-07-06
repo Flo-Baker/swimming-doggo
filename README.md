@@ -120,6 +120,7 @@ Task definition in order of priority
 * dog.js - dogWaterGravity (backlog feature?)
 * game.js - scoreOfSticks (backlog feature?)
 
+* if there's still time for some "fun" put an img or gif of your swimming dog into the splashScreen
 
 ## Additional Links
 
