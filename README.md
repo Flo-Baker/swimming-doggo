@@ -15,7 +15,7 @@ SWIMMING DOGGO is a single page HTML-game based on JavaScript. After pressing th
 * dog and seals collide 3 times = GAME OVER, screen changes
 
 ## Backlog
-* score of catched sticks
+* score of catched sticks when collided with the dog
 * water current acting like opposite gravity to move the dog sometimes
 
 ## Data structure
@@ -38,6 +38,8 @@ SWIMMING DOGGO is a single page HTML-game based on JavaScript. After pressing th
 * creatingSticks () {}
 * creatingSeals () {}
 * scoreOfSticks () {} (backlog feature?)
+* stickAppearance () {}
+* sealAppearance () {}
 * gameLoop () {}
     1. clearing canvas = ctx.clearRect (x,y,w,h)
 
@@ -69,12 +71,11 @@ SWIMMING DOGGO is a single page HTML-game based on JavaScript. After pressing th
 ### stick.js
 * class Stick {}
 * drawStick () {}
-* stickAppearance () {}
+
 
 ### seal.js
 * class Seal {}
 * drawSeal () {}
-* sealApperance
 
 ## States y States Transitions
 Definition of the different states and their transition (transition functions)
