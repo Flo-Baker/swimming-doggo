@@ -1,0 +1,41 @@
+.my-game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#splash-screen {
+    margin-bottom: 20px;
+}
+
+#game-canvas {
+    background-color:azure;
+    display: none;
+}
+
+#gameover-screen{
+    display: none;
+}
+
+#start-button {
+    background-color: lightskyblue;
+    font-family:'Courier New', Courier, monospace;
+    font-size: 40px;
+    border-radius: 80%;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+#restart-button {
+    background-color: lightskyblue;
+    font-family:'Courier New', Courier, monospace;
+    font-size: 40px;
+    font-weight: bold;
+    border-radius: 80%;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+#restart-button {
+
+}

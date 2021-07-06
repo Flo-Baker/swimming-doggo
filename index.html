@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SWIMMING DOGGO</title>
+    <!--Stylesheets to be implemented-->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div classes="my-game">
+        <!--Splash/Start Screen // possible to not stick it on the max-height?-->
+        <div id="splash-screen" class="my-game">
+            <img src="./images/logo-swimming-doggo.png" width="600" alt="logo-swimming-doggo">
+            <button id="start-button">Let's Swim!</button>
+        <!--implement gif of Oskar swimming here-->
+        </div>
+
+        <!--Canvas-->
+        <canvas id="game-canvas" width="900" height="550"></canvas>
+
+        <!--Game Over Screen-->
+        <div id="gameover-screen" class="my-game">
+            <img src="./images/gameover.png" width="600" alt="swimming-dog-is-over">
+            <button id="restart-button">Swim Again!</button>
+        </div>
+
+    </div>
+
+    <!--JavaScripts to be implemented-->
+    <script src="./main.js"></script>
+    <script src="./classes/game.js"></script>
+    <script src="./classes/dog.js"></script>
+    <script src="./classes/stick.js"></script>
+    <script src="./classes/seal.js"></script>
+</body>
+
+</html>
