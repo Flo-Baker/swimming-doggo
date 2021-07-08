@@ -12,7 +12,7 @@ SWIMMING DOGGO is a single page HTML-game based on JavaScript. After pressing th
 * dog needs to catch sticks and avoid colliding with seals
 * dog and sticks collide = sticks will disappear
 * dog and seals collide 2 times = seals will disappear
-* dog and seals collide 3 times = GAME OVER, screen changes
+* dog and seals collide 3 times = GAME OVER, screen changes from canvas to GAME OVER
 
 ## Backlog
 * score of catched sticks when collided with the dog
@@ -20,9 +20,15 @@ SWIMMING DOGGO is a single page HTML-game based on JavaScript. After pressing th
 
 ## Data structure
 ### index.html
+* implementing the stylesheet and js-classes
+* creating the splashScreen, Canvas, gameoverScreen and (re)start button
+
 ### style.css
+* defining the classes and ids from HTML
 
 ### main.js
+#### declaring the global variables
+
 #### Managing DOM elements
 * splashScreen 
 * gameScreen // canvas
@@ -54,7 +60,7 @@ SWIMMING DOGGO is a single page HTML-game based on JavaScript. After pressing th
         * dog = ctx.drawDog or this.dog.drawDog ()
         * stick = ctx.drawStick or fct/method
         * seal = ctx.drawSeal or fct/method
-        (stick and dog might be similiar!?)
+        (stick and seal might be similiar!?)
 
     4. request animation
         
@@ -62,7 +68,7 @@ SWIMMING DOGGO is a single page HTML-game based on JavaScript. After pressing th
 ### dog.js
 * class Dog {}
 * drawDog () {}
-* dogMovementSpace () {}
+* dogMovement () {}
 * dogStickCollision () {}
 * dogSealCollision () {}
 // for both collisions have a look @ MDN collision 2D
