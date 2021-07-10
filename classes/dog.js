@@ -34,9 +34,18 @@ dogMovementUp = () => {
     this.y -= 20
 }
 
+// collision -> MDN collision 2d
+
 // dogSealCollision () {}
-
-
+dogSealCollision = (seal) => {
+  if (this.x < seal.x + seal.width &&
+    this.x + this.width > seal.x &&
+    this.y < seal.y + seal.height &&
+    this.y + this.height > seal.y) {
+     // collision detected!
+     return true
+  } 
+}
 
 
 // dogStickCollision () {}

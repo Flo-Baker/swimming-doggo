@@ -50,7 +50,7 @@ if arrow down is pressed dogMovement = -20
 window.addEventListener("keydown", (event) => {
     if (event.code === "ArrowUp" && gameObj.dog.y > 0) { // means: if the dogs top is > 0 (top of canvas)
         gameObj.dog.dogMovementUp();
-    } else if (event.code === "ArrowDown" && gameObj.dog.y + gameObj.dog < canvas.height) // means: if the dogs bottom is < canvas.height (bottom of canvas)
+    } else if (event.code === "ArrowDown" && gameObj.dog.y + gameObj.dog.height < canvas.height) // means: if the dogs bottom is < canvas.height (bottom of canvas)
         gameObj.dog.dogMovementDown();
 })
 
@@ -58,6 +58,7 @@ window.addEventListener("keydown", (event) => {
  - needs to listen to the click at restart button when game was over
  - when click-event happened the gameoverScreen needs to disappear 
  - canvas has to show up again to start a new Game and the game loop (appearance of elements, movements etc.) needs to restart
+*/
 
 restartButton.addEventListener("click", () => {
     gameoverScreen.style.display = "none";
@@ -65,4 +66,3 @@ restartButton.addEventListener("click", () => {
     gameObj = new Game ();
     gameObj.gameLoop ()
 })
- */

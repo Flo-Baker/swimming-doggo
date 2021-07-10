@@ -77,9 +77,21 @@ createSeals = () => {
     this.sealsArray.forEach(eachSeal => {
         eachSeal.sealMovement()
     });
-/*    
-=> other things to consider: 
-- collisions for score (sticks & seals _/3) and game stop (3x seals)
+    
+//=> other things to consider: 
+//- collisions for score (sticks & seals _/3) and game stop (3x seals)
+
+// this collision is for the stop of the game (currently if dog collides with a seal 1x)
+    this.sealsArray.forEach(eachSeal => {
+        if (this.dog.dogSealCollision(eachSeal)) {
+//game stop = remove canvas + show gameoverScreen
+        this.isGameOn = false;
+        canvas.style.display = "none";
+        gameoverScreen.style.displye = "block"
+        }
+    })
+
+/*
 - removing canvas when game stopped
 - appearance of gameoverScreen
     
