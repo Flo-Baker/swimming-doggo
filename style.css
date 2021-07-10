@@ -9,7 +9,10 @@
 }
 
 #game-canvas {
-    background-color:azure;
+    background-color:rgb(0, 238, 238);
+    border-style: solid;
+    border-width: 15px;
+    border-color: lightgrey;
     display: none;
 }
 

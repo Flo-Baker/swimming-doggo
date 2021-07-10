@@ -1,29 +1,47 @@
-/* 1. creating the Dog class which needs the position (this.x/y/h/w), the speed on the 
-Y axis (because of the dogMovement there), the img size and the img src
-
-class Dog {
-    constructor (x, y, height, weight, speedY, image, image.src) {
-        this.x = ; 
-        this.y = ;
-        this.height = ;
-        this.weight = ;
-        this.speedY = ;
-        this.image = ;
-        this.image.src = ;
-    }
-}
+/* 1. creating the Dog class which needs the position (this.x/y/h/w), starting position has to be in the middle of 
+the Y-Axis(height/2), speed on the Y axis (because of the vertical dogMovement), the img size and the img src
 */
+class Dog {
+  constructor() {
+    this.height = 120;
+    this.width = 70;
+    this.x = 0;
+    this.y = canvas.height / 2 - this.height / 2;
+    this.speedY = 1;
+    this.image = new Image();
+    this.image.src = "../images/dog.png";
+  }
+
 
 // FUNCTIONS THAT ARE NEEDED FOR THE DOG
 
 // drawDog () {}
 
-// dogMovement () {}
+drawDog = () => {
+  ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
+};
+
+// dogMovement () {} 
+// depending on which key arrow is pressed: up = +height at Y-Axis / down = -height at Y-Axis => both starting from canvas.height / 2
+// do I need to work with two functions (movementUp and movementDown)? => in case of flappy it was 2 (gravity & click)
+// two eventListeners listening two those two functions?
+
+dogMovementDown = () => {
+    this.y += 20
+}
+
+dogMovementUp = () => {
+    this.y -= 20
+}
 
 // dogStickCollision () {}
+
+
 
 // dogSealCollision () {}
 
 /* -------------
-BONUS: dogWaterGravity () {}
+BONUS: dogWaterGravity () {} // = movement of the waves that pushes the dog or let him stay "calm"
 */
+
+}
