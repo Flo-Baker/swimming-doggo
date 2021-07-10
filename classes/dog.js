@@ -23,7 +23,7 @@ drawDog = () => {
 
 // dogMovement () {} 
 // depending on which key arrow is pressed: up = +height at Y-Axis / down = -height at Y-Axis => both starting from canvas.height / 2
-// do I need to work with two functions (movementUp and movementDown)? => in case of flappy it was 2 (gravity & click)
+// do I need to work with two functions (movementUp and movementDown)?
 // two eventListeners listening two those two functions?
 
 dogMovementDown = () => {
@@ -34,11 +34,13 @@ dogMovementUp = () => {
     this.y -= 20
 }
 
+// dogSealCollision () {}
+
+
+
+
 // dogStickCollision () {}
 
-
-
-// dogSealCollision () {}
 
 /* -------------
 BONUS: dogWaterGravity () {} // = movement of the waves that pushes the dog or let him stay "calm"

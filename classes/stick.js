@@ -5,7 +5,7 @@ X axis, the img size and the img src
 class Stick {
   constructor(yPos) {
     this.x = canvas.width;
-    this.y = 20;
+    this.y = yPos;
     this.height = 100;
     this.width = 20;
     this.speedX = 1;

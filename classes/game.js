@@ -24,10 +24,10 @@ class Game {
 // first stick
 createSticks = () => {
     if (!this.sticksArray.length || this.sticksArray[this.sticksArray.length -1].x < canvas.width / 2) {
-        let randomStickY = Math.floor(Math.random() * canvas.height / 3);
+        let randomStickY = Math.floor(Math.random() * canvas.height / 2);
         let stick = new Stick (randomStickY);
         this.sticksArray.push(stick);
-        
+
 // need the same randomStickY inifinite times appearing randomly at different heights until dog collides 3x with seals
         // => with a loop or is there an easy/short way?
         /*for ( let i = 0; i < sticksArray.length; i++ ) {
@@ -48,7 +48,7 @@ createSticks = () => {
 // first seal
 createSeals = () => {
     if (!this.sealsArray.length || this.sealsArray[this.sealsArray.length -1].x === canvas.width / 2) {
-    let randomSealY = Math.floor(Math.random() * canvas.height / 4)
+    let randomSealY = Math.floor(Math.random() * canvas.height / 2)
     let seal = new Seal (randomSealY);
     this.sealsArray.push(seal);
     }
@@ -56,7 +56,6 @@ createSeals = () => {
     // let nextSeals = new Seal (nextRandomSealY)
     // this.sticksArray.push(nextSticks)
 }
-
 
 // 4. game loop fct
 
