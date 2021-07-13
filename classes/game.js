@@ -12,6 +12,7 @@ class Game {
     this.sticksArray = [];
     this.sealsArray = [];
     this.isGameOn = true;
+    //? this.sound = ;
   }
 
 /* 2. creating the array of sticks = "createSticks" for the automatic and random appearance on the canvas
@@ -67,8 +68,13 @@ createSeals = () => {
     });
     
 //=> other things to consider: 
-//- collisions for score (sticks & seals _/3) and game stop (3x seals)
-
+/*- here to implement the stickScore function for collision detection of dog & sticks?
+    this.sticksArray.forEach(eachStick => {
+        if (this.dog.dogStickCollision(eachStick)) {
+            stickScore.style.display = "flex"
+        }
+    })
+*/
 // this collision is for the stop of the game (currently if dog collides with a seal 1x)
     this.sealsArray.forEach(eachSeal => {
         if (this.dog.dogSealCollision(eachSeal)) {
@@ -77,6 +83,7 @@ createSeals = () => {
         this.isGameOn = false;
         canvas.style.display = "none";
         gameoverScreen.style.display = "flex";
+        stickScore.style.display = "flex";
         }
     });
 
@@ -86,6 +93,7 @@ createSeals = () => {
 */  
    /* 3. using ctx & this. to draw the neccessary elements in the canvas 
     => bg img, dog, sticks, seals
+    => neccessary to draw the score?
     */
     ctx.drawImage(this.bg, 0, 0, canvas.width, canvas.height);
 

@@ -6,18 +6,17 @@ let canvas = document.querySelector("#game-canvas");
 // 2. DRAWING TOOL "CTX"
 let ctx = canvas.getContext("2d");
 
-// 3. DOM ELEMENTS
+// 3. DOM ELEMENTS (splashScreen, gameOverScree, (re)startButton, scores)
 let splashScreen = document.querySelector("#splash-screen");
 let gameoverScreen = document.querySelector("#gameover-screen");
 let startButton = document.querySelector("#start-button");
 let restartButton = document.querySelector("#restart-button");
-/*
-creating a variable stickScore for collisions with sticks
-let stickScore = 
 
-adding a life-score for collision with seals => 
-let dogLife = 
-*/
+//creating a variable stickScore for collisions with sticks
+let stickScore = document.querySelector("#stick-score");
+
+//adding a life-score for collision with seals => 
+let dogLife = document.querySelector("#dog-life");
 
 let gameObj;
 

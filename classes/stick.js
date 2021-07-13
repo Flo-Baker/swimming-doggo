@@ -8,7 +8,7 @@ class Stick {
     this.y = yPos;
     this.height = 40;
     this.width = 100;
-    this.speedX = 1;
+    this.speedX = 1.5;
     this.image = new Image();
     this.image.src = "../images/stick.png";
   }

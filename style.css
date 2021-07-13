@@ -37,3 +37,11 @@
     padding: 20px;
     margin-top: 30px;
 }
+
+#stick-score {
+    display: none;
+}
+
+#dog-life {
+    display: none;
+}

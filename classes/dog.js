@@ -3,8 +3,8 @@ the Y-Axis(height/2), speed on the Y axis (because of the vertical dogMovement),
 */
 class Dog {
   constructor() {
-    this.height = 120;
-    this.width = 70;
+    this.height = 100;
+    this.width = 100;
     this.x = 0;
     this.y = canvas.height / 2 - this.height / 2;
     this.speedY = 1;
@@ -47,8 +47,6 @@ dogSealCollision = (seal) => {
   } 
 }
 // -> for now it's 1 collision for gameover; goal is to make it possible with 3 collisions
-// if condition with a boolean? "if dogSealCollision happens 3x return true" so in the Game class it would be like "this.isGameOn = false"
-
 
 /*
 // dogStickCollision () {} for the score => just counting the catches
