@@ -11,6 +11,13 @@ let splashScreen = document.querySelector("#splash-screen");
 let gameoverScreen = document.querySelector("#gameover-screen");
 let startButton = document.querySelector("#start-button");
 let restartButton = document.querySelector("#restart-button");
+/*
+creating a variable stickScore for collisions with sticks
+let stickScore = 
+
+adding a life-score for collision with seals => 
+let dogLife = 
+*/
 
 let gameObj;
 
@@ -26,7 +33,7 @@ are in the Game class and need to be "called" -> game loop (appearance of elemen
 startButton.addEventListener("click", () => {
     //startButton.style.backgroundColor = "green"; 
     splashScreen.style.display = "none"; 
-    canvas.style.display = "block", "center";
+    canvas.style.display = "block";
 
     gameObj = new Game ();
 
@@ -55,8 +62,8 @@ window.addEventListener("keydown", (event) => {
 })
 
 /* 3. click at restartButton
- - needs to listen to the click at restart button when game was over
- - when click-event happened the gameoverScreen needs to disappear 
+ - needs to listen to the click at restart button when gameoverScreen appeared
+ - when click-event happens the gameoverScreen needs to disappear 
  - canvas has to show up again to start a new Game and the game loop (appearance of elements, movements etc.) needs to restart
 */
 

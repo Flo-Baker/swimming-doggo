@@ -38,17 +38,31 @@ dogMovementUp = () => {
 
 // dogSealCollision () {}
 dogSealCollision = (seal) => {
-  if (this.x < seal.x + seal.width &&
-    this.x + this.width > seal.x &&
+  if (this.x < seal.x + seal.width && 
+    this.x + this.width > seal.x && 
     this.y < seal.y + seal.height &&
     this.y + this.height > seal.y) {
      // collision detected!
      return true
   } 
 }
+// -> for now it's 1 collision for gameover; goal is to make it possible with 3 collisions
+// if condition with a boolean? "if dogSealCollision happens 3x return true" so in the Game class it would be like "this.isGameOn = false"
 
 
-// dogStickCollision () {}
+/*
+// dogStickCollision () {} for the score => just counting the catches
+
+dogStickCollision = (stick) => {
+  if (this.x < stick.x + stick.width &&
+    this.x + this.width > stick.x &&
+    this.y < stick.y + stick.height &&
+    this.y + this.height > stick.y) {
+      // collision detected!
+    }
+}
+*/
+
 
 
 /* -------------

@@ -5,8 +5,8 @@ class Seal {
   constructor(yPos) {
     this.x = canvas.width;
     this.y = yPos;
-    this.height = 110;
-    this.width = 60;
+    this.height = 60;
+    this.width = 110;
     this.speedX = 1.5;
     this.image = new Image();
     this.image.src = "../images/seal.png";

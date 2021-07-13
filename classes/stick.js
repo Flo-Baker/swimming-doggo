@@ -6,8 +6,8 @@ class Stick {
   constructor(yPos) {
     this.x = canvas.width;
     this.y = yPos;
-    this.height = 100;
-    this.width = 20;
+    this.height = 40;
+    this.width = 100;
     this.speedX = 1;
     this.image = new Image();
     this.image.src = "../images/stick.png";

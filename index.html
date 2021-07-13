@@ -13,31 +13,34 @@
 <body>
 
     <div class="my-game">
-        <!--Splash Screen // possible to not stick it on the max-height?-->
+        <!--Splash Screen / Canvas-->
         <div id="splash-screen" class="my-game">
-            <img src="./images/logo-swimming-doggo.png" width="600" alt="logo-swimming-doggo">
-            <button id="start-button">LET'S SWIM!</button>
+            <img src="./images/logo-swimming-doggo.png" width="900" alt="logo-swimming-doggo">
             <!--implement gif of swimming Oskar here-->
-            <div>
+            <div class="instructions">
                 <h1>SWIMMING DOGGO</h1>
-                <p>Your player is a swimming dog and you have to catch as many sticks as possible! <br>
-                    But beware of the appearing seals! <br>
-                    If you're not careful enough the game will be over after you collided with three seals!<br>
-                    You control your dog with pressing arrow up or down on your keyboard.
-                    Now go for a swim and have a lot of fun!
-                    <!--when time think about putting arrow up/down png here-->
-                </p>
+                <h2>Instructions</h2>
+                <ol id="listed-instructions">
+                    <li>Your player is a swimming dog and you have to catch as many sticks as possible!</li>
+                    <li>Watch out for seals - they might end the game earlier than expected!</li>
+                    <!--when time is left think about putting arrow up/down png here-->
+                    <li>Control your dog with arrow up and arrow down!</li>
+                    <li>Have fun and enjoy the game!</li>
+                </ol>
             </div>
+            <button id="start-button">LET'S SWIM!</button>
         </div>
 
         <!--Canvas-->
-        <canvas id="game-canvas" width="900" height="550"></canvas>
+        <canvas id="game-canvas" width="800" height="450"></canvas>
 
-        <!--Game Over Screen-->
+        <!--Gameover Screen-->
         <div id="gameover-screen" class="my-game">
-            <img src="./images/gameover.png" width="600" alt="swimming-dog-is-over">
+            <img src="./images/gameover.png" width="900" alt="swimming-dog-is-over">
+           <!-- <img src="./images/seal-gameoverScreen.jpg" width="600" alt="swimming-dog-is-over"> -->
             <button id="restart-button">SWIM AGAIN!</button>
         </div>
+
 
     </div>
 

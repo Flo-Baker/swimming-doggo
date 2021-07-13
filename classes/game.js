@@ -21,42 +21,30 @@ class Game {
 => appearence needs to be randomly in the height
 => when createSticks is written before createSeals, the first stick should appear before the first seal appears
 */
-// first stick
+// sticks
 createSticks = () => {
     if (!this.sticksArray.length || this.sticksArray[this.sticksArray.length -1].x < canvas.width / 2) {
         let randomStickY = Math.floor(Math.random() * canvas.height / 2);
         let stick = new Stick (randomStickY);
         this.sticksArray.push(stick);
-
-// need the same randomStickY inifinite times appearing randomly at different heights until dog collides 3x with seals
-        // => with a loop or is there an easy/short way?
-        /*for ( let i = 0; i < sticksArray.length; i++ ) {
-        }*/
-        //let nextSticks = new Stick (nextRandomStickY);
-        //this.sticksArray.push(nextSticks);
     };
-
 }
 
 /* 3. creating the array of seals for sealAppearance
-=> (by time) there should be more than 2 or 3 sticks in the canvas at the same time
+=> there should be more than 2 or 3 seals in the canvas at the same time
 => next should start when the previous one has arrived at 1/4 of the canvas
 => appearence definitely needs to be randomly in the height
 => to make the game more difficult for the player the seals should be bigger and appear faster/more often?
 */
 
-// first seal
+// seals
 createSeals = () => {
-    if (!this.sealsArray.length || this.sealsArray[this.sealsArray.length -1].x === canvas.width / 2) {
+    if (!this.sealsArray.length || this.sealsArray[this.sealsArray.length -1].x < canvas.width / 2) {
     let randomSealY = Math.floor(Math.random() * canvas.height / 2)
     let seal = new Seal (randomSealY);
     this.sealsArray.push(seal);
     }
-// need the same randomSealY infinite times appearing randomly at different heights until three collisions happened with the dog
-    // let nextSeals = new Seal (nextRandomSealY)
-    // this.sticksArray.push(nextSticks)
-}
-
+};
 // 4. game loop fct
 
   gameLoop = () => {
@@ -71,7 +59,7 @@ createSeals = () => {
     this.createSticks();
     this.sticksArray.forEach(eachStick => {
         eachStick.stickMovement()
-    })
+    });
     
     this.createSeals();
     this.sealsArray.forEach(eachSeal => {
@@ -84,37 +72,26 @@ createSeals = () => {
 // this collision is for the stop of the game (currently if dog collides with a seal 1x)
     this.sealsArray.forEach(eachSeal => {
         if (this.dog.dogSealCollision(eachSeal)) {
+        // if this.dog.dogSealCollision (eachSeal) happens 3x -> this.isGameOn = false     
 //game stop = remove canvas + show gameoverScreen
         this.isGameOn = false;
         canvas.style.display = "none";
-        gameoverScreen.style.displye = "block"
+        gameoverScreen.style.display = "flex";
         }
-    })
+    });
 
 /*
 - removing canvas when game stopped
 - appearance of gameoverScreen
-    
-
-    //game stop = remove canvas + show gameoverScreen
-        this.isGameOn = false;
-        canvas.style.display = "none";
-        gameoverScreen.style.displye = "block"
-    */
-    
-    
-
-    /*
-    3. using ctx & this. to draw the neccessary elements in the canvas 
+*/  
+   /* 3. using ctx & this. to draw the neccessary elements in the canvas 
     => bg img, dog, sticks, seals
     */
     ctx.drawImage(this.bg, 0, 0, canvas.width, canvas.height);
 
-    
-
     this.sticksArray.forEach(eachStick => {
         eachStick.drawStick()
-    })
+    });
     
     this.seal.drawSeal();
 
@@ -127,6 +104,6 @@ createSeals = () => {
     // 4. request animation
     if (this.isGameOn) {
         requestAnimationFrame(this.gameLoop);
-    }
+    };
   };
-}
+};
