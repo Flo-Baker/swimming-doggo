@@ -6,17 +6,18 @@ let canvas = document.querySelector("#game-canvas");
 // 2. DRAWING TOOL "CTX"
 let ctx = canvas.getContext("2d");
 
-// 3. DOM ELEMENTS (splashScreen, gameOverScree, (re)startButton, scores)
+// 3. DOM ELEMENTS (splashScreen, gameOverScreen, (re)startButton, scores)
 let splashScreen = document.querySelector("#splash-screen");
 let gameoverScreen = document.querySelector("#gameover-screen");
+
 let startButton = document.querySelector("#start-button");
 let restartButton = document.querySelector("#restart-button");
 
-//creating a variable stickScore for collisions with sticks
 let stickScore = document.querySelector("#stick-score");
-
-//adding a life-score for collision with seals => 
 let dogLife = document.querySelector("#dog-life");
+
+let stickScoreSpan = document.querySelector("#stick-score-span");
+let sealScoreSpan = document.querySelector("#dog-life-span");
 
 let gameObj;
 
@@ -33,6 +34,8 @@ startButton.addEventListener("click", () => {
     //startButton.style.backgroundColor = "green"; 
     splashScreen.style.display = "none"; 
     canvas.style.display = "block";
+    stickScore.style.display = "flex";
+    dogLife.style.display = "flex";
 
     gameObj = new Game ();
 
@@ -54,9 +57,9 @@ if arrow down is pressed dogMovement = -20
 
 // just the basic movement / there needs to be another condition in form of a little "collision" if the max and min at the y-axis is reached
 window.addEventListener("keydown", (event) => {
-    if (event.code === "ArrowUp" && gameObj.dog.y > 0) { // means: if the dogs top is > 0 (top of canvas)
+    if (event.code === "ArrowUp" && gameObj.dog.y > 0) { 
         gameObj.dog.dogMovementUp();
-    } else if (event.code === "ArrowDown" && gameObj.dog.y + gameObj.dog.height < canvas.height) // means: if the dogs bottom is < canvas.height (bottom of canvas)
+    } else if (event.code === "ArrowDown" && gameObj.dog.y + gameObj.dog.height < canvas.height)
         gameObj.dog.dogMovementDown();
 })
 

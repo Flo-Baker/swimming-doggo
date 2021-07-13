@@ -17,13 +17,12 @@
         <div id="splash-screen" class="my-game">
             <img src="./images/logo-swimming-doggo.png" width="900" alt="logo-swimming-doggo">
             <!--implement gif of swimming Oskar here-->
-            <div class="instructions">
+            <div class ="my-game">
                 <h1>SWIMMING DOGGO</h1>
                 <h2>Instructions</h2>
-                <ol id="listed-instructions">
+                <ol>
                     <li>Your player is a swimming dog and you have to catch as many sticks as possible!</li>
                     <li>Watch out for seals - they might end the game earlier than expected!</li>
-                    <!--when time is left think about putting arrow up/down png here-->
                     <li>Control your dog with arrow up and arrow down!</li>
                     <li>Have fun and enjoy the game!</li>
                 </ol>
@@ -32,19 +31,22 @@
         </div>
 
         <!--Canvas-->
-        <canvas id="game-canvas" width="800" height="450"></canvas>
+        <canvas id="game-canvas" width="900" height="450"></canvas>
+
+
+        <!--Score & Life-->
         <div id="stick-score">
-            <h3>#CATCHED STICKS:</h3>
+            <h3>CATCHED STICKS: <span id="stick-score-span">0</span> </h3>
         </div>
+
         <div id="dog-life">
-            <h3>LIFES</h3>
+            <h3>SEAL COLLISIONS: <span id="dog-life-span">0</span> </h3>
         </div>
 
 
         <!--Gameover Screen-->
         <div id="gameover-screen" class="my-game">
             <img src="./images/gameover.png" width="900" alt="swimming-dog-is-over">
-           <!-- <img src="./images/seal-gameoverScreen.jpg" width="600" alt="swimming-dog-is-over"> -->
             <button id="restart-button">SWIM AGAIN!</button>
         </div>
 

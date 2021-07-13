@@ -3,15 +3,14 @@ the Y-Axis(height/2), speed on the Y axis (because of the vertical dogMovement),
 */
 class Dog {
   constructor() {
-    this.height = 100;
-    this.width = 100;
+    this.height = 80;
+    this.width = 80;
     this.x = 0;
     this.y = canvas.height / 2 - this.height / 2;
     this.speedY = 1;
     this.image = new Image();
     this.image.src = "./images/dog.png";
   }
-
 
 // FUNCTIONS THAT ARE NEEDED FOR THE DOG
 
@@ -49,22 +48,21 @@ dogSealCollision = (seal) => {
 // -> for now it's 1 collision for gameover; goal is to make it possible with 3 collisions
 
 /*
-// dogStickCollision () {} for the score => just counting the catches
-
+// dogStickCollision () {} for the score => just counting the collisions for the score at canvas and gameoverScreen
+*/
 dogStickCollision = (stick) => {
   if (this.x < stick.x + stick.width &&
     this.x + this.width > stick.x &&
     this.y < stick.y + stick.height &&
     this.y + this.height > stick.y) {
       // collision detected!
+      return true;
     }
 }
-*/
-
 
 
 /* -------------
-BONUS: dogWaterGravity () {} // = movement of the waves that pushes the dog or let him stay "calm"
+BONUS: dogWaterGravity () {} // = movement of the waves that pushes the dog or let him stay "calm" // opposite gravity
 */
 
 }
