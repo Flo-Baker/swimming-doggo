@@ -5,7 +5,7 @@ the dog as main character, bg and dog as new obj and stick, seal as an array tha
 class Game {
   constructor() {
     this.bg = new Image();
-    this.bg.src = "../images/ocean.png";
+    this.bg.src = "./images/ocean.png";
     this.dog = new Dog();
     this.stick = new Stick();
     this.seal = new Seal();

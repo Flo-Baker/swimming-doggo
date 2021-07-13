@@ -10,7 +10,7 @@ class Stick {
     this.width = 100;
     this.speedX = 1.5;
     this.image = new Image();
-    this.image.src = "../images/stick.png";
+    this.image.src = "./images/stick.png";
   }
 
   // 2. drawStick

@@ -9,7 +9,7 @@ class Dog {
     this.y = canvas.height / 2 - this.height / 2;
     this.speedY = 1;
     this.image = new Image();
-    this.image.src = "../images/dog.png";
+    this.image.src = "./images/dog.png";
   }
 
 

@@ -9,7 +9,7 @@ class Seal {
     this.width = 110;
     this.speedX = 2;
     this.image = new Image();
-    this.image.src = "../images/seal.png";
+    this.image.src = "./images/seal.png";
   }
 
   // 2. drawSeal () {}
