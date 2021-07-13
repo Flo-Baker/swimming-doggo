@@ -74,9 +74,11 @@ createSeals = () => {
     this.sticksArray.forEach((eachStick, index) => {
         if (this.dog.dogStickCollision(eachStick)) {
             // start counting by 0 and adding every collided stick to the score
-            let previousScore = Number (stickScoreSpan.innerText)
+            let previousScore = Number (stickScoreSpan.innerText);
             stickScoreSpan.innerText = previousScore +1;
-            // removing the collided stick from the array => .splice
+            // removing the collided stick from the array => .splice and same for seals
+            this.sticksArray.splice (1, index);
+
         }
     })
 
