@@ -86,9 +86,12 @@ createSeals = () => {
         let previousDogLife = Number (dogLifeSpan.innerText);
         dogLifeSpan.innerText = previousDogLife -1;
         this.sealsArray.splice (index, 1);
+                    //console.log('Yes');
+
     }
         //to stop the game after the dogLifeSpan === 0 (means 3 collisions between dog & seal)
-        if (dogLifeSpan <= 0) {    
+        if (Number (dogLifeSpan.innerText) === 2) {    
+            //console.log('Yes2')
 //game stop = remove canvas + show gameoverScreen
         this.isGameOn = false;
         canvas.style.display = "none";
@@ -97,10 +100,6 @@ createSeals = () => {
         }
     });
 
-/*
-- removing canvas when game stopped
-- appearance of gameoverScreen
-*/  
    /* 3. using ctx & this. to draw the neccessary elements in the canvas 
     => bg img, dog, sticks, seals & score (sticks and seals)?
    */
