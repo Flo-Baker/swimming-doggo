@@ -17,7 +17,7 @@ let stickScore = document.querySelector("#stick-score");
 let dogLife = document.querySelector("#dog-life");
 
 let stickScoreSpan = document.querySelector("#stick-score-span");
-let sealScoreSpan = document.querySelector("#dog-life-span");
+let dogLifeSpan = document.querySelector("#dog-life-span");
 
 let gameObj;
 
@@ -31,7 +31,6 @@ let gameObj;
 are in the Game class and need to be "called" -> game loop (appearance of elements, movements etc.) needs to be invoked
 */
 startButton.addEventListener("click", () => {
-    //startButton.style.backgroundColor = "green"; 
     splashScreen.style.display = "none"; 
     canvas.style.display = "block";
     stickScore.style.display = "flex";
@@ -57,9 +56,9 @@ if arrow down is pressed dogMovement = -20
 
 // just the basic movement / there needs to be another condition in form of a little "collision" if the max and min at the y-axis is reached
 window.addEventListener("keydown", (event) => {
-    if (event.code === "ArrowUp" && gameObj.dog.y > 0) { 
+    if (event.code === "ArrowUp" && gameObj.dog.y > 8) { 
         gameObj.dog.dogMovementUp();
-    } else if (event.code === "ArrowDown" && gameObj.dog.y + gameObj.dog.height < canvas.height)
+    } else if (event.code === "ArrowDown" && gameObj.dog.y + gameObj.dog.height < (canvas.height - 8))
         gameObj.dog.dogMovementDown();
 })
 

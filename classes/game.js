@@ -12,9 +12,7 @@ class Game {
     this.sticksArray = [];
     this.sealsArray = [];
     this.isGameOn = true;
-    //this.stickScore = ; 
-    //this.dogLife = ; 
-    // this.sound = ;
+    //this.sound = new Audio();
   }
 
 /* 2. creating the array of sticks = "createSticks" for the automatic and random appearance on the canvas
@@ -77,18 +75,20 @@ createSeals = () => {
             let previousScore = Number (stickScoreSpan.innerText);
             stickScoreSpan.innerText = previousScore +1;
             // removing the collided stick from the array => .splice and same for seals
-            this.sticksArray.splice (1, index);
-
+            this.sticksArray.splice(index, 1);
         }
     })
 
 // this collision is for the stop of the game (currently if dog collides with a seal 1x)
-    this.sealsArray.forEach(eachSeal => {
+    this.sealsArray.forEach((eachSeal, index) => {
         if (this.dog.dogSealCollision(eachSeal)) {
         // implementing the dogLife-score after the collision detection (starting by 3 until reached 0)
-        // dogLife -= 1 
-        // if this.dog.dogSealCollision (eachSeal) happens 3x -> this.isGameOn = false     
-        // && this.dogLife === 0   
+        let previousDogLife = Number (dogLifeSpan.innerText);
+        dogLifeSpan.innerText = previousDogLife -1;
+        this.sealsArray.splice (index, 1);
+    }
+        //to stop the game after the dogLifeSpan === 0 (means 3 collisions between dog & seal)
+        if (dogLifeSpan <= 0) {    
 //game stop = remove canvas + show gameoverScreen
         this.isGameOn = false;
         canvas.style.display = "none";
