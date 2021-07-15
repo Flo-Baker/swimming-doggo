@@ -56,7 +56,8 @@ createSeals = () => {
 2. movement of the elements 
 => elements: dog, sticks, seals
 */
-    //dogWaterGravity ();
+    //this.dog.dogWaterMovementBeach ();
+    //this.dog.dogWaterMovementDeepSea ();
     this.createSticks();
     this.sticksArray.forEach(eachStick => {
         eachStick.stickMovement()
@@ -79,35 +80,33 @@ createSeals = () => {
         }
     })
 
-// this collision is for the stop of the game (currently if dog collides with a seal 1x)
+// this collision is for the dogLife
     this.sealsArray.forEach((eachSeal, index) => {
         if (this.dog.dogSealCollision(eachSeal)) {
-        // implementing the dogLife-score after the collision detection (starting by 3 until reached 0)
+        // implementing the dogLife after the collision detection (starting by 3 until reached 0)
         let previousDogLife = Number (dogLifeSpan.innerText);
         dogLifeSpan.innerText = previousDogLife -1;
         this.sealsArray.splice (index, 1);
-                    //console.log('Yes');
-
     }
-        //to stop the game after the dogLifeSpan === 0 (means 3 collisions between dog & seal)
+        //to stop the game after the dogLifeSpan === 0 (means 3 collisions)
         if (Number (dogLifeSpan.innerText) === 2) {    
-            //console.log('Yes2')
 //game stop = remove canvas + show gameoverScreen
         this.isGameOn = false;
         canvas.style.display = "none";
         gameoverScreen.style.display = "flex";
         stickScore.style.display = "flex";
+        dogLife.style.display = "none"
         }
     });
 
+/*
+- removing canvas when game stopped
+- appearance of gameoverScreen
+*/  
    /* 3. using ctx & this. to draw the neccessary elements in the canvas 
     => bg img, dog, sticks, seals & score (sticks and seals)?
    */
     ctx.drawImage(this.bg, 0, 0, canvas.width, canvas.height);
-
-    // for the scores text (font) needs to be drawn
-    //ctx.drawStickScore () 
-    //ctx.drawdogLife () 
 
     this.sticksArray.forEach(eachStick => {
         eachStick.drawStick()

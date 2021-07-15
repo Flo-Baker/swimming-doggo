@@ -69,8 +69,13 @@ window.addEventListener("keydown", (event) => {
 */
 
 restartButton.addEventListener("click", () => {
+        //console.log('click')
     gameoverScreen.style.display = "none";
     canvas.style.display = "block";
     gameObj = new Game ();
+    // here: set scores to 0
+    stickScoreSpan.innerText = 0; 
+    dogLifeSpan.innerText = 3;
+    dogLife.style.display = "flex"
     gameObj.gameLoop ()
 })

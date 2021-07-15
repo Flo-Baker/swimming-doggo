@@ -33,6 +33,30 @@ dogMovementUp = () => {
     this.y -= 20
 }
 
+/* -------------
+BONUS: dogWaterMovement () {} 
+// if dog > this.height => gets pushed to the beach by gravity where more seals are waiting
+// if dog < this.height => gets pulled into to sea by the ocean flow
+*/
+/*dogWaterMovementBeach = () => {
+  if (this.height + this.y > canvas.height / 2) { 
+    this.y++
+    }
+  }
+dogWaterMovementDeepSea = () => {
+  if (this.height + this.y < canvas.height / 2) {
+    this.y--
+  }
+}
+*/
+
+/*dogWaterMovementDeepSea = () => {
+  if (this.y < this.y + this.height) {
+    this.y--
+  }
+}
+*/
+
 // collision -> MDN collision 2d
 
 // dogSealCollision () {}
@@ -45,8 +69,6 @@ dogSealCollision = (seal) => {
      return true
   } 
 }
-// -> for now it's 1 collision for gameover; goal is to make it possible with 3 collisions
-
 /*
 // dogStickCollision () {} for the score => just counting the collisions for the score at canvas and gameoverScreen
 */
@@ -58,11 +80,5 @@ dogStickCollision = (stick) => {
       // collision detected!
       return true;
     }
-}
-
-
-/* -------------
-BONUS: dogWaterGravity () {} // = movement of the waves that pushes the dog or let him stay "calm" // opposite gravity
-*/
-
-}
+  }
+};
