@@ -89,7 +89,7 @@ createSeals = () => {
         this.sealsArray.splice (index, 1);
     }
         //to stop the game after the dogLifeSpan === 0 (means 3 collisions)
-        if (Number (dogLifeSpan.innerText) === 2) {    
+        if (Number (dogLifeSpan.innerText) === 0) {    
 //game stop = remove canvas + show gameoverScreen
         this.isGameOn = false;
         canvas.style.display = "none";
