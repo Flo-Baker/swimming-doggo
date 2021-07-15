@@ -57,7 +57,7 @@ createSeals = () => {
 => elements: dog, sticks, seals
 */
     //this.dog.dogWaterMovementBeach ();
-    //this.dog.dogWaterMovementDeepSea ();
+    this.dog.dogWaterMovementDeepSea ();
     this.createSticks();
     this.sticksArray.forEach(eachStick => {
         eachStick.stickMovement()

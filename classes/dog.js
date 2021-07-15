@@ -35,20 +35,15 @@ dogMovementUp = () => {
 
 /* -------------
 BONUS: dogWaterMovement () {} 
-// if dog > this.height => gets pushed to the beach by gravity where more seals are waiting
-// if dog < this.height => gets pulled into to sea by the ocean flow
+// if dog < this.height => gets pulled into to sea by the ocean flow where big seals are waiting
+// (if dog > this.height => gets pushed to the beach)
 */
-/*dogWaterMovementBeach = () => {
-  if (this.height + this.y > canvas.height / 2) { 
-    this.y++
-    }
-  }
+
 dogWaterMovementDeepSea = () => {
-  if (this.height + this.y < canvas.height / 2) {
+  if (this.height + this.y < canvas.height / 1.6) {
     this.y--
   }
 }
-*/
 
 /*dogWaterMovementDeepSea = () => {
   if (this.y < this.y + this.height) {

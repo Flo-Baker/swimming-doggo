@@ -57,8 +57,8 @@ if arrow down is pressed dogMovement = -20
 // just the basic movement / there needs to be another condition in form of a little "collision" if the max and min at the y-axis is reached
 window.addEventListener("keydown", (event) => {
     if (event.code === "ArrowUp" && gameObj.dog.y > 8) { 
-        gameObj.dog.dogMovementUp();
-    } else if (event.code === "ArrowDown" && gameObj.dog.y + gameObj.dog.height < (canvas.height - 8))
+        gameObj.dog.dogMovementUp();        
+    } else if (event.code === "ArrowDown" && gameObj.dog.y + gameObj.dog.height < (canvas.height - gameObj.dog.height / 10))
         gameObj.dog.dogMovementDown();
 })
 
@@ -73,7 +73,7 @@ restartButton.addEventListener("click", () => {
     gameoverScreen.style.display = "none";
     canvas.style.display = "block";
     gameObj = new Game ();
-    // here: set scores to 0
+    // here: set scores to 0 & 3
     stickScoreSpan.innerText = 0; 
     dogLifeSpan.innerText = 3;
     dogLife.style.display = "flex"
