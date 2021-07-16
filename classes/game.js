@@ -9,10 +9,11 @@ class Game {
     this.dog = new Dog();
     this.stick = new Stick();
     this.seal = new Seal();
+    //this.bigSeal = new BigSeal ();
     this.sticksArray = [];
     this.sealsArray = [];
-    this.isGameOn = true;
-    //this.sound = new Audio();
+    //this.bigSealsArray = [];
+    this.isGameOn = true;    
   }
 
 /* 2. creating the array of sticks = "createSticks" for the automatic and random appearance on the canvas
@@ -46,6 +47,17 @@ createSeals = () => {
     this.sealsArray.push(seal);
     }
 };
+
+/*
+// creating the bigSeals
+createBigSeals = () => {
+    if (!this.bigSealsArray.length || this.bigSealsArray[this.bigSealsArray.lenght -1].x < canvas.width 1.6) {
+        let randomBigSealY = Math.floor(Math.random() * (canvas.height -80))
+        let bigSeal = new BigSeal (randomBigSealY);
+        this.bigSealsArray.push(bigSeal);
+    }
+}
+*/
 // 4. game loop fct
 
   gameLoop = () => {
@@ -56,8 +68,7 @@ createSeals = () => {
 2. movement of the elements 
 => elements: dog, sticks, seals
 */
-    //this.dog.dogWaterMovementBeach ();
-    this.dog.dogWaterMovementDeepSea ();
+    this.dog.dogWaterMovementDeepSea();
     this.createSticks();
     this.sticksArray.forEach(eachStick => {
         eachStick.stickMovement()
@@ -67,6 +78,13 @@ createSeals = () => {
     this.sealsArray.forEach(eachSeal => {
         eachSeal.sealMovement()
     });
+
+    /*
+    this.createBigSeals();
+    this.bigSealsArray.forEach(eachBigSeal => {
+        eachBigSeal.bigSealMovement()
+    });
+    */
     
 //=> other things to consider: 
 /*- here to implement the dogStickCollision to get the stickScore*/
@@ -88,16 +106,26 @@ createSeals = () => {
         dogLifeSpan.innerText = previousDogLife -1;
         this.sealsArray.splice (index, 1);
     }
+
         //to stop the game after the dogLifeSpan === 0 (means 3 collisions)
         if (Number (dogLifeSpan.innerText) === 0) {    
 //game stop = remove canvas + show gameoverScreen
         this.isGameOn = false;
         canvas.style.display = "none";
         gameoverScreen.style.display = "flex";
-        stickScore.style.display = "flex";
-        dogLife.style.display = "none"
+        stickScore.style.display = "flex"; //change this to "none"
+        //finalScore.style.display = "flex";
+        dogLife.style.display = "none";
         }
     });
+
+/*
+    this.bigSealsArray.forEach((eachBigSeal, index) => {
+        if (this.dog.dogBigSealCollision(eachBigSeal)) {
+        this.bigSealsArray.splice (index, 1);
+        }
+    }
+    */
 
 /*
 - removing canvas when game stopped

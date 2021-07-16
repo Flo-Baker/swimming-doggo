@@ -35,22 +35,13 @@ dogMovementUp = () => {
 
 /* -------------
 BONUS: dogWaterMovement () {} 
-// if dog < this.height => gets pulled into to sea by the ocean flow where big seals are waiting
-// (if dog > this.height => gets pushed to the beach)
+// if dog reaches canvas.height / 1.5 he gets pulled into to sea by the ocean current where big seals are waiting but needs to stop at y=0
 */
-
 dogWaterMovementDeepSea = () => {
-  if (this.height + this.y < canvas.height / 1.6) {
+  if (this.height + this.y < canvas.height / 1.5 && this.y > 0) {
     this.y--
   }
 }
-
-/*dogWaterMovementDeepSea = () => {
-  if (this.y < this.y + this.height) {
-    this.y--
-  }
-}
-*/
 
 // collision -> MDN collision 2d
 
@@ -64,6 +55,18 @@ dogSealCollision = (seal) => {
      return true
   } 
 }
+
+// dogBigSealCollision () {}
+/*
+dogBigSealCollision = (bigSeal) => {
+  if (this.x < bigSeal.x + bigSeal.width && 
+    this.x + this.width > bigSeal.x && 
+    this.y < bigSeal.y + bigSeal.height &&
+    this.y + this.height > bigSeal.y) {
+     // collision detected!
+     return true
+}
+*/
 /*
 // dogStickCollision () {} for the score => just counting the collisions for the score at canvas and gameoverScreen
 */

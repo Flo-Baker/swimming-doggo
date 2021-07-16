@@ -138,4 +138,4 @@ Task definition in order of priority
 
 
 ### Slides
-[Link Slides.com](http://slides.com)
+[Google Slides](https://docs.google.com/presentation/d/1_OiSuI0dxhZbtRNvP-p9E3QxWgPFio8teIdIMMdsaTE/edit#slide=id.p)
