@@ -7,12 +7,14 @@ class Game {
     this.bg = new Image();
     this.bg.src = "./images/ocean.png";
     this.dog = new Dog();
-    this.stick = new Stick();
+    this.minY = 80;
+    this.maxY = 325;
+    /*this.stick = new Stick();
     this.seal = new Seal();
-    //this.bigSeal = new BigSeal ();
+    this.bigSeal = new BigSeal();*/
     this.sticksArray = [];
     this.sealsArray = [];
-    //this.bigSealsArray = [];
+    this.bigSealsArray = [];
     this.isGameOn = true;    
   }
 
@@ -25,39 +27,33 @@ class Game {
 */
 // sticks
 createSticks = () => {
-    if (!this.sticksArray.length || this.sticksArray[this.sticksArray.length -1].x < canvas.width / 1.5) {
-        let randomStickY = Math.floor(Math.random() * (canvas.height -40));
+    if (!this.sticksArray.length || this.sticksArray[this.sticksArray.length -1].x < canvas.width / 1.2) {
+        let randomStickY = Math.floor(Math.random() * (canvas.height -120));
         let stick = new Stick (randomStickY);
         this.sticksArray.push(stick);
     };
 }
 
-/* 3. creating the array of seals for sealAppearance
-=> there should be more than 2 or 3 seals in the canvas at the same time
-=> next should start when the previous one has arrived at 1/4 of the canvas
-=> appearence definitely needs to be randomly in the height
-=> to make the game more difficult for the player the seals should be bigger and appear faster/more often?
-*/
+// 3. creating the array of seals 
 
-// seals
 createSeals = () => {
     if (!this.sealsArray.length || this.sealsArray[this.sealsArray.length -1].x < canvas.width / 1.4) {
-    let randomSealY = Math.floor(Math.random() * (canvas.height -60))
+    let randomSealY = Math.floor(Math.random() * (this.maxY - this.minY + 1) + this.minY);
     let seal = new Seal (randomSealY);
     this.sealsArray.push(seal);
     }
 };
 
-/*
+
 // creating the bigSeals
 createBigSeals = () => {
-    if (!this.bigSealsArray.length || this.bigSealsArray[this.bigSealsArray.lenght -1].x < canvas.width 1.6) {
-        let randomBigSealY = Math.floor(Math.random() * (canvas.height -80))
-        let bigSeal = new BigSeal (randomBigSealY);
-        this.bigSealsArray.push(bigSeal);
+    if (!this.bigSealsArray.length || this.bigSealsArray[this.bigSealsArray.length -1].x < canvas.width / 4) {
+    //let randomBigSealY = Math.floor(Math.random())
+    let bigSeal = new BigSeal //(randomBigSealY);
+    this.bigSealsArray.push(bigSeal);
     }
 }
-*/
+
 // 4. game loop fct
 
   gameLoop = () => {
@@ -69,6 +65,7 @@ createBigSeals = () => {
 => elements: dog, sticks, seals
 */
     this.dog.dogWaterMovementDeepSea();
+
     this.createSticks();
     this.sticksArray.forEach(eachStick => {
         eachStick.stickMovement()
@@ -79,12 +76,10 @@ createBigSeals = () => {
         eachSeal.sealMovement()
     });
 
-    /*
     this.createBigSeals();
     this.bigSealsArray.forEach(eachBigSeal => {
         eachBigSeal.bigSealMovement()
     });
-    */
     
 //=> other things to consider: 
 /*- here to implement the dogStickCollision to get the stickScore*/
@@ -114,18 +109,23 @@ createBigSeals = () => {
         canvas.style.display = "none";
         gameoverScreen.style.display = "flex";
         stickScore.style.display = "flex"; //change this to "none"
-        //finalScore.style.display = "flex";
+        finalScore.style.display = "flex"; //change this fo "flex"
         dogLife.style.display = "none";
         }
     });
 
-/*
+// 1 collision between dog & bigSeal to end the game
     this.bigSealsArray.forEach((eachBigSeal, index) => {
         if (this.dog.dogBigSealCollision(eachBigSeal)) {
         this.bigSealsArray.splice (index, 1);
+        this.isGameOn = false;
+        canvas.style.display = "none";
+        gameoverScreen.style.display = "flex";
+        stickScore.style.display = "flex"; //change this to "none"
+        finalScore.style.display = "flex"; //change this fo "flex"
+        dogLife.style.display = "none";
         }
-    }
-    */
+    });
 
 /*
 - removing canvas when game stopped
@@ -135,15 +135,17 @@ createBigSeals = () => {
     => bg img, dog, sticks, seals & score (sticks and seals)?
    */
     ctx.drawImage(this.bg, 0, 0, canvas.width, canvas.height);
+     
+    this.sealsArray.forEach(eachSeal => {
+        eachSeal.drawSeal()
+    });
 
     this.sticksArray.forEach(eachStick => {
         eachStick.drawStick()
     });
     
-    this.seal.drawSeal();
-
-    this.sealsArray.forEach(eachSeal => {
-        eachSeal.drawSeal()
+    this.bigSealsArray.forEach(eachBigSeal => {
+        eachBigSeal.drawBigSeal()
     });
 
     this.dog.drawDog();

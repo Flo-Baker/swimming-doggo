@@ -3,10 +3,10 @@ X axis (because of the horizontal Movement), the img size and the img src
 */
 class Seal {
   constructor(yPos) {
-    this.x = canvas.width;
-    this.y = yPos;
     this.height = 60;
     this.width = 110;
+    this.x = canvas.width;
+    this.y = yPos;
     this.speedX = 2;
     this.image = new Image();
     this.image.src = "./images/seal.png";

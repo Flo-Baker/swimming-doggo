@@ -7,7 +7,7 @@ class Dog {
     this.width = 80;
     this.x = 0;
     this.y = canvas.height / 2 - this.height / 2;
-    this.speedY = 1;
+    //this.speedY = 1;
     this.image = new Image();
     this.image.src = "./images/dog.png";
   }
@@ -57,7 +57,7 @@ dogSealCollision = (seal) => {
 }
 
 // dogBigSealCollision () {}
-/*
+
 dogBigSealCollision = (bigSeal) => {
   if (this.x < bigSeal.x + bigSeal.width && 
     this.x + this.width > bigSeal.x && 
@@ -65,8 +65,9 @@ dogBigSealCollision = (bigSeal) => {
     this.y + this.height > bigSeal.y) {
      // collision detected!
      return true
+  }
 }
-*/
+
 /*
 // dogStickCollision () {} for the score => just counting the collisions for the score at canvas and gameoverScreen
 */

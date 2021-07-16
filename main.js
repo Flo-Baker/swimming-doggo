@@ -75,8 +75,10 @@ restartButton.addEventListener("click", () => {
     canvas.style.display = "block";
     gameObj = new Game ();
     // set scores to 0 & 3
+    finalScore.style.display = "none";
     stickScoreSpan.innerText = 0; 
     dogLifeSpan.innerText = 3;
+    stickScore.style.display = "flex"
     dogLife.style.display = "flex"
     gameObj.gameLoop ()
 })

@@ -1,15 +1,14 @@
-/*
 // 1. create class BigSeal
 class BigSeal {
-    constructor () {
-    this.x = canvas.width;
-    this.y = canvas.height - this.height / 2;
+    constructor() {
     this.height = 80;
     this.width = 130;
-    this.speed = 2.5;
-    this.image = New Image ();
-    this.image.src = "./images/bigSeal.png" 
-    }
+    this.x = canvas.width;
+    this.y = this.height / 8;
+    this.speedX = 2.5;
+    this.image = new Image();
+    this.image.src = "./images/bigSeal.png";
+    };
 
 // 2. draw BigSeal
 
@@ -19,12 +18,7 @@ drawBigSeal = () => {
 
 // 3. movement of BigSeal
 
-  bigSealMovement = () => {
+bigSealMovement = () => {
     this.x -= this.speedX;
   };
-
 }
-*/
-
-
-
