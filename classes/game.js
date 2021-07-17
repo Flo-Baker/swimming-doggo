@@ -108,8 +108,9 @@ createBigSeals = () => {
         this.isGameOn = false;
         canvas.style.display = "none";
         gameoverScreen.style.display = "flex";
-        stickScore.style.display = "flex"; //change this to "none"
-        finalScore.style.display = "flex"; //change this fo "flex"
+        stickScore.style.display = "none"; //change this to "none"
+        finalStickScoreSpan.innerHTML = Number (stickScoreSpan.innerText);
+        //finalScore.style.display = "flex"; //change this fo "flex"
         dogLife.style.display = "none";
         }
     });
@@ -121,8 +122,9 @@ createBigSeals = () => {
         this.isGameOn = false;
         canvas.style.display = "none";
         gameoverScreen.style.display = "flex";
-        stickScore.style.display = "flex"; //change this to "none"
-        finalScore.style.display = "flex"; //change this fo "flex"
+        stickScore.style.display = "none"; //change this to "none"
+        finalStickScoreSpan.innerHTML = Number (stickScoreSpan.innerText);
+        //finalScore.style.display = "flex"; //change this fo "flex"
         dogLife.style.display = "none";
         }
     });

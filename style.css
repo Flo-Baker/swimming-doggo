@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Kanit&display=swap');
+
 .my-game {
     display: flex;
     flex-direction: column;
@@ -5,11 +7,12 @@
 }
 
 h1, h2 {
-    font-family:'Courier New', Courier, monospace;
+    font-family: 'Kanit', sans-serif;
 }
 
 li {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family:'Kanit', sans-serif;
+    font-size: 20px;
 }
 
 #splash-screen {
@@ -54,9 +57,13 @@ li {
     display: none;
 }
 
-#final-score {
+/* #final-score {
     display: none;
 }
+
+#final-stick-score-span {
+    display: none;
+} */
 
 #dog-life {
     display: none;

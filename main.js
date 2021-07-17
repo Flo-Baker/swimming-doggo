@@ -17,6 +17,7 @@ let stickScore = document.querySelector("#stick-score");
 let dogLife = document.querySelector("#dog-life");
 let finalScore = document.querySelector("#final-score");
 
+let finalStickScoreSpan = document.querySelector("#final-stick-score-span");
 let stickScoreSpan = document.querySelector("#stick-score-span");
 let dogLifeSpan = document.querySelector("#dog-life-span");
 
