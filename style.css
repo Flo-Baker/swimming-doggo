@@ -6,9 +6,13 @@
     align-items: center;
 }
 
-h1, h2 {
+h2 {
     font-family: 'Kanit', sans-serif;
 }
+
+h1 {
+    font-size: 30px;
+    font-family:'Courier New', Courier, monospace;}
 
 ul {
     line-height: 30px;
@@ -52,7 +56,7 @@ li {
 }
 
 #start-button {
-    background-color: lightskyblue;
+    background-color: #01ace4;
     font-family:'Courier New', Courier, monospace;
     font-size: 40px;
     border-radius: 80%;
@@ -61,7 +65,7 @@ li {
 }
 
 #restart-button {
-    background-color: lightskyblue;
+    background-color: #01ace4;
     font-family:'Courier New', Courier, monospace;
     font-size: 40px;
     border-radius: 80%;
