@@ -10,7 +10,21 @@ h1, h2 {
     font-family: 'Kanit', sans-serif;
 }
 
+ul {
+    line-height: 30px;
+}
 
+#watch-out {
+    list-style-image: url('./images/danger.png')
+}
+
+#wave {
+    list-style-image: url('./images/wave.png');
+}
+
+#dog-icon {
+    list-style-image: url('./images/dog-icon.png');
+}
 
 li {
     font-family:'Kanit', sans-serif;
